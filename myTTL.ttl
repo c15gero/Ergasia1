@@ -1,0 +1,40 @@
+@prefix ge: <http://dilab77.ionio.gr/swp/gerodimos/vocab#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ge:Teacher rdf:type rdfs:Class .
+ge:Lecture rdf:type rdfs:Class .
+ge:Classroom rdf:type rdfs:Class .
+ge:Lesson rdf:type rdfs:Class .
+
+ge:Teacher rdfs:subClassOf foaf:Person .
+
+ge:given_by rdf:type rdf:Property .
+ge:given_by rdfs:domain rdfs:Lecture .
+ge:given_by rdfs:range rdfs:Teacher .
+
+ge:given_in rdf:type rdf:Property .
+ge:given_in rdfs:domain rdfs:Lecture .
+ge:given_in rdfs:range rdfs:Classroom .
+
+ge:represents rdf:type rdf:Property .
+ge:represents rdfs:domain rdfs:Lecture .
+ge:represents rdfs:range rdfs:Lesson .
+
+ge:day rdf:type rdf:Property .
+ge:day rdfs:domain rdfs:Lecture .
+ge:day rdfs:range rdf:Literal .
+
+ge:starting_time rdf:type rdf:Property .
+ge:starting_time rdfs:domain rdfs:Lecture .
+ge:starting_time rdfs:range xsd:Time .
+
+ge:ending_time rdf:type rdf:Property .
+ge:ending_time rdfs:domain rdfs:Lecture .
+ge:ending_time rdfs:range xsd:Time .
+
+ge:semester rdf:type rdf:Property .
+ge:semester rdfs:domain rdfs:Lecture .
+ge:semester rdfs:range rdf:Literal .
